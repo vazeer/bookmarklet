@@ -1,0 +1,1840 @@
+<html>
+<head>
+<style>
+body {
+	min-width: 420px;
+	overflow-x: hidden;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+input,textarea {
+	width: 420px;
+}
+
+input#save {
+	font-weight: bold;
+	width: auto;
+}
+</style>
+
+<style>
+body, ul, li {
+    font-size:14px; 
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:21px;
+    text-align:left;
+}
+ 
+/* Navigation Bar */
+ 
+#menu {
+    list-style:none;
+    width:760px;
+    margin:30px auto 0px auto;
+    height:43px;
+    padding:0px 20px 0px 20px;
+ 
+    /* Rounded Corners */
+     
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+ 
+    /* Background color and gradients */
+     
+    background: #014464;
+    background: -moz-linear-gradient(top, #0272a7, #013953);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0272a7), to(#013953));
+     
+    /* Borders */
+     
+    border: 1px solid #002232;
+ 
+    -moz-box-shadow:inset 0px 0px 1px #edf9ff;
+    -webkit-box-shadow:inset 0px 0px 1px #edf9ff;
+    box-shadow:inset 0px 0px 1px #edf9ff;
+}
+ 
+#menu li {
+    float:left;
+    text-align:center;
+    position:relative;
+    padding: 4px 10px 4px 10px;
+    margin-right:30px;
+    margin-top:7px;
+    border:none;
+}
+ 
+#menu li:hover {
+    border: 1px solid #777777;
+    padding: 4px 9px 4px 9px;
+     
+    /* Background color and gradients */
+     
+    background: #F4F4F4;
+    background: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
+     
+    /* Rounded corners */
+     
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+ 
+#menu li a {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px; 
+    color: #EEEEEE;
+    display:block;
+    outline:0;
+    text-decoration:none;
+    text-shadow: 1px 1px 1px #000;
+}
+ 
+#menu li:hover a {
+    color:#161616;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+#menu li .drop {
+    padding-right:21px;
+    background:url("img/drop.png") no-repeat right 8px;
+}
+#menu li:hover .drop {
+    background:url("img/drop.png") no-repeat right 7px;
+}
+ 
+/* Drop Down */
+ 
+.dropdown_1column, 
+.dropdown_2columns, 
+.dropdown_3columns, 
+.dropdown_4columns,
+.dropdown_5columns {
+    margin:4px auto;
+    float:left;
+    position:absolute;
+    left:-999em; /* Hides the drop down */
+    text-align:left;
+    padding:10px 5px 10px 5px;
+    border:1px solid #777777;
+    border-top:none;
+     
+    /* Gradient background */
+    background:#F4F4F4;
+    background: -moz-linear-gradient(top, #EEEEEE, #BBBBBB);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#BBBBBB));
+ 
+    /* Rounded Corners */
+    -moz-border-radius: 0px 5px 5px 5px;
+    -webkit-border-radius: 0px 5px 5px 5px;
+    border-radius: 0px 5px 5px 5px;
+}
+ 
+.dropdown_1column {width: 140px;}
+.dropdown_2columns {width: 280px;}
+.dropdown_3columns {width: 420px;}
+.dropdown_4columns {width: 560px;}
+.dropdown_5columns {width: 700px;}
+ 
+#menu li:hover .dropdown_1column, 
+#menu li:hover .dropdown_2columns, 
+#menu li:hover .dropdown_3columns,
+#menu li:hover .dropdown_4columns,
+#menu li:hover .dropdown_5columns {
+    left:-1px;
+    top:auto;
+}
+ 
+/* Columns */
+ 
+.col_1,
+.col_2,
+.col_3,
+.col_4,
+.col_5 {
+    display:inline;
+    float: left;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.col_1 {width:130px;}
+.col_2 {width:270px;}
+.col_3 {width:410px;}
+.col_4 {width:550px;}
+.col_5 {width:690px;}
+ 
+/* Right alignment */
+ 
+#menu .menu_right {
+    float:right;
+    margin-right:0px;
+}
+#menu li .align_right {
+    /* Rounded Corners */
+    -moz-border-radius: 5px 0px 5px 5px;
+    -webkit-border-radius: 5px 0px 5px 5px;
+    border-radius: 5px 0px 5px 5px;
+}
+#menu li:hover .align_right {
+    left:auto;
+    right:-1px;
+    top:auto;
+}
+ 
+/* Drop Down Content Stylings */
+ 
+#menu p, #menu h2, #menu h3, #menu ul li {
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:21px;
+    font-size:12px;
+    text-align:left;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+#menu h2 {
+    font-size:21px;
+    font-weight:400;
+    letter-spacing:-1px;
+    margin:7px 0 14px 0;
+    padding-bottom:14px;
+    border-bottom:1px solid #666666;
+}
+#menu h3 {
+    font-size:14px;
+    margin:7px 0 14px 0;
+    padding-bottom:7px;
+    border-bottom:1px solid #888888;
+}
+
+}
+ 
+#menu li:hover div a {
+    font-size:12px;
+    color:#015b86;
+}
+#menu li:hover div a:hover {
+    color:#029feb;
+}
+.strong {
+    font-weight:bold;
+}
+.italic {
+    font-style:italic;
+}
+.imgshadow {
+    background:#FFFFFF;
+    padding:4px;
+    border:1px solid #777777;
+    margin-top:5px;
+    -moz-box-shadow:0px 0px 5px #666666;
+    -webkit-box-shadow:0px 0px 5px #666666;
+    box-shadow:0px 0px 5px #666666;
+}
+.img_left { /* Image sticks to the left */
+    width:auto;
+    float:left;
+    margin:5px 15px 5px 5px;
+}
+
+
+#menu li ul {
+    list-style:none;
+    padding:0;
+    margin:0 0 12px 0;
+}
+#menu li ul li {
+    font-size:12px;
+    line-height:24px;
+    position:relative;
+    text-shadow: 1px 1px 1px #ffffff;
+    padding:0;
+    margin:0;
+    float:none;
+    text-align:left;
+    width:130px;
+}
+#menu li ul li:hover {
+    background:none;
+    border:none;
+    padding:0;
+    margin:0;
+}
+
+#menu li .greybox li {
+    background:#F4F4F4;
+    border:1px solid #bbbbbb;
+    margin:0px 0px 4px 0px;
+    padding:4px 6px 4px 6px;
+    width:116px;
+ 
+    /* Rounded Corners */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#menu li .greybox li:hover {
+    background:#ffffff;
+    border:1px solid #aaaaaa;
+    padding:4px 6px 4px 6px;
+    margin:0px 0px 4px 0px;
+}
+
+
+</style>
+
+<script src="popup.js" type="text/javascript"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+<link rel="stylesheet" href="menu.css" type="text/css" media="screen" />
+ 
+</head>
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Karla%7CMontserrat:700">
+<link rel="stylesheet" href="css/screen.css">
+
+
+
+<body>
+	<!--   <a href="#" id='addTitle' class="myButton">Title</a><br><br> -->
+	<!--    <p><label for="title">Title</label><br />
+            <input type="text" id="title" name="title" size="50" value="" /></p> -->
+
+	<div style="float: right;">
+		 <!-- 
+		 <input type="button" class="myButtonRED"  style = "width : 150px" value="Cancel" id="closecall" /> -->
+ <img src=button_delete_red.png id="closecall"  />
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+	<table id="tableofimages">
+
+	</table>
+
+
+	<div id="Rolled" class="Rolled">
+		<div class="content"></div>
+	</div>
+	<div id='updateDiv'></div>
+
+
+	<!-- <div><a href="#"  class="myButton">price</a><input id="pricebutton" class="myButton" ></input></div><br> 
+ <div><a href="#"  class="myButton">feature-bullets</a><input id="featurebullets" class="myButton"></input></div><br>
+<div><a href="#" class="myButton">color</a><input id="colorSelection" class="myButton"></inputid></div><br>
+  -->
+	<div id='wordslistWithinTable'></div>
+<br/>
+<br/>
+<br/>
+
+<h3>Categories of aisle</32>
+<ul id="menu">
+    
+ <li> <a href="#" class="drop">Men</a><!-- Begin 4 columns Item -->
+     
+        <div class="dropdown_5columns"><!-- Begin 4 columns container -->
+         
+            <div class="col_5">
+               
+            </div>
+             
+            <div class="col_1">
+             
+         <h3>All Clothing</h3>
+          <ul>
+      <li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>T-Shirts</input></li>
+      <li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Casual Shirts</input></li>
+      <li><input  class="squaredOne"
+    name="options" type="checkbox"><font color="black" size="2"/>Partywear Shirts</input></li>
+		<li><input c class="squaredOne"
+	    name="options" type="checkbox"><font color="black" size="2"/>Jeans</input></li>
+<li><input  class="squaredOne"
+	 name="options" type="checkbox"><font color="black" size="2"/>Formal Shirts</input></li>
+	<li><input  class="squaredOne"
+name="options"  type="checkbox"><font color="black" size="2"/>shorts/3/4ths</input></li>
+	<li><input  class="squaredOne"
+	     name="options"  type="checkbox"><font color="black" size="2"/>Sportswear</input></li>
+	<li><input  class="squaredOne"
+	      name="options"  type="checkbox"><font color="black" size="2"/>Trousers</input></li>
+	<li><input  class="squaredOne"
+name="options"  type="checkbox"><font color="black" size="2"/>Suits and Blazers</input></li>
+	<li><input  class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Ethic Wear</input></li>
+	<li><input  class="squaredOne"
+	     name="options"  type="checkbox"><font color="black" size="2"/>Inner Wear</input></li>
+	<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sleep Wear</input></li>
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>All watches</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Fastrack</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Casio</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Titan</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Fossil</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Tommy-Hilfiger</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Timex</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Maxima</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Citizen</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Q&Q</input></li>
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>All Men's accesories</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Bracelets</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Chains</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Cuffins</input></li>
+
+<li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Ties</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Caps</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Mufflers</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Scarfs</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Bandanas</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Pocket Square</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Handkerchiefs</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Wrist Bands</input></li>
+                </ul>   
+                  
+            </div>
+
+            <div class="col_1">
+             
+                <h3>All Bags,Belts & Wallets</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Back Packs</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Wallets&Belts</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Laptop Bags</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Duffel Bags</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Suitcases</input></li>
+                </ul>   
+                  
+            </div>
+           
+            <div class="col_1">
+             
+                <h3>All Sunglasses</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Aviator</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Way Farer</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Sports/Wrap-round</input></li>
+                </ul>   
+                  
+            </div>
+             
+
+        <div class="col_1">
+             
+                <h3>All Frangnances</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Perfumes</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Deodonrants</input></li>
+                </ul>   
+            </div>
+
+
+
+<div class="col_2">
+             
+                <h3>All Footwear</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Sports Shoes</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Casual shoes</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Formal Shoes</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Sandals/Floaters</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Flip-Flops/Slippers</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Sneakers</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Running Shoes</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Loafers</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Boots</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Shoe Care</input></li>
+                </ul>   
+                  
+            </div>
+
+        <div class="col_1">
+                <h3>All Grooming and Wellness</h3>
+                <ul>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Shaving</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Skin care</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Hair Care</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Bath and Spa</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Oral care</input></li>
+<li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Health care Devices</input></li>
+        
+                </ul>
+
+             </div>
+        </div><!-- End men's catogery -->
+     
+    </li><!-- End men's Items -->
+ 
+  
+    <li><a href="#" class="drop">Women</a><!-- Begin women's Item -->
+     
+        <div class="dropdown_4columns"><!-- Begin women's container -->
+         
+            <div class="col_4">
+            </div>
+             
+            <div class="col_1">
+             
+                <h3>All Clothing</h3>
+                <ul>
+ <li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>Polos&T-Shirts</input></li>
+      <li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Shirts</input></li>
+      <li><input  class="squaredOne"
+    name="options" type="checkbox"><font color="black" size="2"/>Tops&tunics</input></li>
+		<li><input c class="squaredOne"
+	    name="options" type="checkbox"><font color="black" size="2"/>Jeans</input></li>
+<li><input  class="squaredOne"
+	 name="options" type="checkbox"><font color="black" size="2"/>Ethinic wear</input></li>
+	<li><input  class="squaredOne"
+name="options"  type="checkbox"><font color="black" size="2"/>shorts/3/4ths</input></li>
+	<li><input  class="squaredOne"
+	     name="options"  type="checkbox"><font color="black" size="2"/>Sarees</input></li>
+	<li><input  class="squaredOne"
+	      name="options"  type="checkbox"><font color="black" size="2"/>Trousers&Capris</input></li>
+	<li><input  class="squaredOne"
+name="options"  type="checkbox"><font color="black" size="2"/>Sports&Gym Wear</input></li>
+	<li><input  class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Leggings</input></li>
+	<li><input  class="squaredOne"
+	     name="options"  type="checkbox"><font color="black" size="2"/>Jeggings</input></li>
+	<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sleep Wear</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Maternity Wear</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Dresses</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Skirts</input></li>
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>All Footwear</h3>
+                <ul>
+         <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Flats</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Heels</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bellies</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Wedges</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Slippers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Flip-flops</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sports shoes</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sports sandals</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Casual shoes</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Formal Shoes</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Boots</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>Jewellery</h3>
+                <ul>
+ <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Ear rings</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Coins</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>All Sunglasses</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Over-sized</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Oval</input></li>
+
+                </ul>   
+                  
+            </div>
+            <div class="col_1">
+             
+                <h3>All Bags,Belts&Wallets</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Hand Bags</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sling Bags</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Wallets</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Belts</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Totes</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>clutches</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Back packs</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>All Watches</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Fast track</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Titan</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Fossil</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>casio</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sonata</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Timex</input></li>
+
+                </ul>   
+                  
+            </div>
+
+<div class="col_1">
+             
+                <h3>Beauty&Wellnes</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Make up</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Skin care</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Hair care</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Deodorants</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bath&Body</input></li>
+
+                </ul>   
+                  
+            </div>
+             
+        </div><!-- End 4 columns container -->
+     
+    </li><!-- End women's Item -->
+ <li><a href="#" class="drop">Baby & Kids</a><!-- Begin baby and kid's Item -->
+     
+        <div class="dropdown_4columns"><!-- Begin Baby and kids's container -->
+         
+            <div class="col_4">
+            </div>
+             
+            <div class="col_1">
+             
+                <h3>Boys Clothing</h3>
+                <ul>
+ <li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>T-Shirts</input></li>
+      <li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Shirts</input></li>
+     <li><input c class="squaredOne"
+	    name="options" type="checkbox"><font color="black" size="2"/>Jeans</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Innerwear</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>Girls Clothing</h3>
+                <ul>
+         <li><input class="squaredOne"
+	     name="options" type="checkbox" ><font color="black" size="2"/> Tees&Tops</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Dresses</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Skirts</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Jeans</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Shorts</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Capries</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>InnerWear</input></li>
+
+
+                </ul>   
+                  
+            </div>
+     <div class="col_1">
+             
+                <h3>Infant Clothing</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>For Boys</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>For Girls</input></li>
+
+                </ul>   
+                  
+            </div>
+
+            <div class="col_1">
+             
+                <h3>Watches</h3>
+                <ul>
+ <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>For Boys</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>For Girls</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>All Sunglasses</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>For Boys</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>For Girls</input></li>
+
+                </ul>   
+                  
+            </div>
+            <div class="col_1">
+             
+                <h3>Baby Diapers</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Diapers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Wipes</input></li>
+                </ul>   
+                  
+            </div>
+
+
+<div class="col_1">
+             
+                <h3>Baby Care</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Baby Bedding</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bath & Skin Care</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Baby Gear</input></li>
+
+                </ul>   
+                  
+            </div>
+
+             <div class="col_1">
+             
+                <h3>Toys</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Toys for Boys</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Toys for Girls</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Toys for Babies</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>Boy's Footwear</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Casual Shoes</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sandals</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Flip Flops</input></li>
+
+                </ul>   
+                  
+            </div>
+       
+          <div class="col_1">
+                <h3>Girl's Footwear</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sandals</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Casual Shoes</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Clogs</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Flip Flops</input></li>
+
+                </ul>   
+            </div>
+        </div><!-- End kids container -->
+     
+    </li><!-- End kid's Item -->
+
+ <li class="menu_right"><a href="#" class="drop">Books & Media</a><!-- Begin books and media Item -->
+     
+        <div class="dropdown_5columns align_right"><!-- Begin books and media container -->
+             
+            <div class="col_5">
+            </div>
+             
+            <div class="col_1">
+             
+                <h3>Books</h3>
+                <ul>
+ <li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black" size="2"/>Academic & Professional</input></li>
+      <li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black" size="2"/>Entrance Exam</input></li>
+     <li><input c class="squaredOne"
+	    name="options" type="checkbox"><font color="black" size="2"/>Literature & Fiction</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Children & Teens</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Indian Writting</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>New Releases</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Best Sellers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>School Books</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>eBooks</h3>
+                <ul>
+         <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/> Literature & Fiction</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Science & Technology</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>BioGraphies & AutoBiography</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bussiness Investing & mgmt</input></li>
+                </ul>   
+                  
+            </div>
+     <div class="col_1">
+             
+                <h3>Music</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>New Releases</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Devotional & Spiritual</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bollywood Retro</input></li>
+
+                </ul>   
+                  
+            </div>
+
+
+            <div class="col_1">
+             
+                <h3>movies & Tv Shows</h3>
+                <ul>
+ <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>New Releases</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Blu-Rays & 3D</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>DVDs</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Hindi Movies & TV Shows</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>English Movies & TV Shows</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Health & Wellness</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Documentaries</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Box Sets</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>DVD & Blu Ray Players</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>Gaming</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>New Releases</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>PC Games</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>PS3 Games</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Xbox 360 Games</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>PS2 Games</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>PSP Games</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Value Packs</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>IGN Top Rated</input></li>
+                </ul>   
+                  
+            </div>
+            <div class="col_1">
+             
+                <h3>Stationery</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Pens</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Calculators</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>College Supplies</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Art Supplies</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Diaries & Note Books</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Office Supplies</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Deal Store</input></li>
+
+                </ul>   
+                  
+            </div>
+
+
+<div class="col_1">
+             
+                <h3>Office Electronics</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Paper Shredders</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Power Supplies</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Label Printers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Printing Calculators</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Basic Calculators</input></li>
+
+                </ul>   
+                  
+            </div>
+
+        </div><!-- End Books and media container -->
+     
+    </li><!-- End Books and Media Item -->
+
+
+
+
+<li class="menu_right"><a href="#" class="drop">Home & Kitchen</a><!-- Begin home and kitchen Item -->
+     
+        <div class="dropdown_4columns align_right"><!-- Begin home and kitchen container -->
+             
+            <div class="col_4">
+            </div>
+             
+            <div class="col_1">
+             
+                <h3>Kitchen Appliances</h3>
+                <ul>
+ <li><input class="squaredOne"
+    name="options" type="checkbox" ><font color="black"/>MicroWave Ovens</input></li>
+      <li><input class="squaredOne"
+    name="options" type="checkbox"><font color="black"/>Sandwich & Rotimakers</input></li>
+     <li><input c class="squaredOne"
+	    name="options" type="checkbox"><font color="black" size="2"/>Induction Cook Tops</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Mixer/Juicer/Grinders</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Electic Cooker</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Food Processor</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Hand Blenders</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Electric Kettle</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>Home Appliances</h3>
+                <ul>
+         <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/> Air Conditioners</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Vaccum Cleaners</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Lightings</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Water Purifers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Irons</input></li>
+                </ul>   
+                  
+            </div>
+     <div class="col_1">
+             
+                <h3>Hand Tools</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Screw Drivers & Allen Keys</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Pliers & Multiutility tools</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Wrenches & Spanners</input></li>
+
+                </ul>   
+                  
+            </div>
+
+            <div class="col_1">
+             
+                <h3>Power tools</h3>
+                <ul>
+ <li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Hammer Drillss</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Power Drills</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Screw Drills</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Sanders & Polishers</input></li>
+
+                </ul>   
+                  
+            </div>
+     
+            <div class="col_1">
+             
+                <h3>Home Improvement Tools</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Engraving & Crafting</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Measuring tools</input></li>
+
+                </ul>   
+                  
+            </div>
+            <div class="col_1">
+             
+                <h3>Wall Decors</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Key Holders</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Posters</input></li>
+
+                </ul>   
+                  
+            </div>
+
+
+<div class="col_1">
+             
+                <h3>Home Fragnances</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Aroma Oil&Diffuser Set</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Potpourri</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Candel Holders</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>Flowers & Plants</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Aritificial Flowers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Artificial Plants</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>Kitchen</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Aprons</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Table Covers</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>CookWare</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Pots & pans</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Pressure cookers</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>Flasks & ThermoWare</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Flasks</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Hot Boxes</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>Storage</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bottles & Sippers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Containers & jars</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+             
+                <h3>Bed</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bed Sheets</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Comforters</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Pillows</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bedding Sets</input></li>
+
+<div class="col_1">
+             
+                <h3>Cutlery & Tableware</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Cutlery</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Condiment sets</input></li>
+
+                </ul>   
+                  
+            </div>
+<div class="col_1">
+                <h3>Living</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Cushion Pillow Covers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Curtains</input></li>
+
+                </ul>   
+                  
+            </div>
+
+  <div class="col_1">
+                <h3>Bar Accessories</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bottle Openers</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Flasks</input></li>
+
+                </ul>   
+                  
+            </div>  
+<div class="col_1">
+             
+                <h3>Bath</h3>
+                <ul>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Bath Towels</input></li>
+<li><input class="squaredOne"
+	     name="options" type="checkbox"><font color="black" size="2"/>Mats</input></li>
+
+                </ul>   
+                  
+            </div>           
+
+        </div><!-- End Home & Kitchen container -->
+     
+    </li><!-- End Home & Kitchen Item -->
+</ul>
+ 
+</BR>
+</BR>
+</br>
+</br>
+ 
+	<form action="" method="post" class="basic-grey">
+		<h1>
+			Details <span>Please fill all the texts in the fields.</span>
+		</h1>
+		<label> <span>Title: </span> <input id='addTitle' type="text"
+			name="name" placeholder="Title of the product" />
+		</label> <label> <span>Price: </span> <input id="pricebutton"
+			type="text" name="name" placeholder="Price of the product" />
+		</label> <label> <span>Color: </span> <input id="colorSelection"
+			type="text" name="name" placeholder="Color"></input>
+		</label>
+
+		<!--     <label>
+        <span>Words: </span>
+        <textarea id="wordsList" type="text"  name="name" placeholder="Words"></textarea>
+        <input  type="button"   class="button" value="ReCheck" id="cancelitem"></input>
+    </label> -->
+
+		<label> <span>Feature-bullets: </span> <textarea
+				id="featurebullets" type="html" name="message"
+				placeholder="Features"></textarea>
+		</label> <label> <span>&nbsp;</span> <input type="button"
+			class="myButton2" value="Upload" id="uploaditem" /> <br> <!-- <input type="button" class="button" value="Cancel" id="cancelitem" />  -->
+		</label>
+	</form>
+
+	<section id="examples" class="examples-section">
+		<div class="container">
+
+			<div id="example-images"></div>
+		</div>
+	</section>
+	<!-- Mustache templates -->
+	<script id='image-section-template' type='text/x-mustache'>
+    {{#images}}
+    <div class="image-section {{class}}">
+      <div class="image-wrap">
+        <button class="run-functions-button">
+          <span class="no-touch-label">Click</span>
+          <span class="touch-label">Tap</span>
+        </button>
+        <img class="target-image"   src="{{file}}" />
+      </div>
+      <div class="color-thief-output"></div>
+    </div>
+    {{/images}}
+  </script>
+
+
+	<script id="color-thief-output-template" type="text/x-mustache">
+    <div class="function get-color">
+      <h3 class="function-title">Dominant Color</h3>
+      <div class="swatches">
+        <div class="swatch" style="background-color: rgb({{color.0}}, {{color.1}}, {{color.2}})"></div>
+      </div>
+      <div class="function-code">
+        <code>colorThief.getColor(image):{{elapsedTimeForGetColor}}ms</code>
+      </div>
+    </div>
+    <div class="function get-palette">
+      <h3 class="function-title">Palette</h3>
+      <div class="function-output">
+        <div class="swatches">
+          {{#palette}}
+            <div class="swatch" style="background-color: rgb({{0}}, {{1}}, {{2}})"></div>
+          {{/palette}}
+        </div>
+      </div>
+      <div class="function-code">
+        <code>colorThief.getPalette(image):{{elapsedTimeForGetPalette}}ms</code>
+      </div>
+    </div>
+  </script>
+
+
+	<script src="color-thief.js"></script>
+	<script src="jquery.js"></script>
+	<script src="mustache.js"></script>
+
+
+	<script type="text/javascript" src="lexer.js"></script>
+	<script type="text/javascript" src="lexicon.js_"></script>
+	<script type="text/javascript" src="POSTagger.js"></script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push([ '_setAccount', 'UA-2196019-1' ]);
+		_gaq.push([ '_trackPageview' ]);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+					: 'http://www')
+					+ '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+<style>
+.myButton {
+	-moz-box-shadow: 0px 10px 14px -7px #ffffff;
+	-webkit-box-shadow: 0px 10px 14px -7px #ffffff;
+	box-shadow: 0px 10px 14px -7px #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed
+		), color-stop(1, #dfdfdf));
+	background: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed',
+		endColorstr='#dfdfdf', GradientType=0);
+	background-color: #ededed;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	cursor: pointer;
+	color: #777777;
+	font-family: arial;
+	font-size: 19px;
+	font-weight: bold;
+	padding: 6px 55px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+}
+
+.myButton:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf
+		), color-stop(1, #ededed));
+	background: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf',
+		endColorstr='#ededed', GradientType=0);
+	background-color: #dfdfdf;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
+.myButton2 {
+	-moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff
+		), color-stop(1, #378de5));
+	background: -moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: -webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: -o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: -ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff',
+		endColorstr='#378de5', GradientType=0);
+	background-color: #79bbff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #84bbf3;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 11px 34px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #528ecc;
+}
+
+.myButton2:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5
+		), color-stop(1, #79bbff));
+	background: -moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: -webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: -o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: -ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5',
+		endColorstr='#79bbff', GradientType=0);
+	background-color: #378de5;
+}
+
+.myButton2:active {
+	position: relative;
+	top: 1px;
+}
+
+/* Basic Grey */
+.basic-grey {
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #EEE;
+	padding: 20px 30px 20px 30px;
+	font: 12px Georgia, "Times New Roman", Times, serif;
+	color: #888;
+	text-shadow: 1px 1px 1px #FFF;
+	border: 1px solid #DADADA;
+}
+
+.basic-grey h1 {
+	font: 25px Georgia, "Times New Roman", Times, serif;
+	padding: 0px 0px 10px 40px;
+	display: block;
+	border-bottom: 1px solid #DADADA;
+	margin: -10px -30px 30px -30px;
+	color: #888;
+}
+
+.basic-grey h1>span {
+	display: block;
+	font-size: 11px;
+}
+
+.basic-grey label {
+	display: block;
+	margin: 0px 0px 5px;
+}
+
+.basic-grey label>span {
+	float: left;
+	width: 80px;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 10px;
+	color: #888;
+}
+
+.basic-grey input[type="text"],.basic-grey input[type="email"],.basic-grey textarea,.basic-grey select
+	{
+	border: 1px solid #DADADA;
+	color: #888;
+	height: 30px;
+	margin-bottom: 16px;
+	margin-right: 6px;
+	margin-top: 2px;
+	outline: 0 none;
+	padding: 3px 3px 3px 5px;
+	width: 80%;
+	font: normal 12px/12px Georgia, "Times New Roman", Times, serif;
+}
+
+.basic-grey select {
+	background: #FFF url('down-arrow.png') no-repeat right;
+	background: #FFF url('down-arrow.png') no-repeat right);
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	width: 72%;
+	height: 30px;
+}
+
+.basic-grey textarea {
+	height: 150px;
+}
+
+.basic-grey .button {
+	background: #E48F8F;
+	border: none;
+	padding: 10px 25px 10px 25px;
+	color: #FFF;
+}
+
+.basic-grey .button:hover {
+	background: #CF7A7A
+}
+
+/* #### bootstrap Form #### */
+.bootstrap-frm {
+	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #FFF;
+	padding: 20px 30px 20px 30px;
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #888;
+	text-shadow: 1px 1px 1px #FFF;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.bootstrap-frm h1 {
+	font: 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0px 0px 10px 40px;
+	display: block;
+	border-bottom: 1px solid #DADADA;
+	margin: -10px -30px 30px -30px;
+	color: #888;
+}
+
+.bootstrap-frm h1>span {
+	display: block;
+	font-size: 11px;
+}
+
+.bootstrap-frm label {
+	display: block;
+	margin: 0px 0px 5px;
+}
+
+.bootstrap-frm label>span {
+	float: left;
+	width: 80px;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 10px;
+	color: #333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+.bootstrap-frm input[type="text"],.bootstrap-frm input[type="email"],.bootstrap-frm textarea,.bootstrap-frm select
+	{
+	border: 1px solid #CCC;
+	color: #888;
+	height: 20px;
+	margin-bottom: 16px;
+	margin-right: 6px;
+	margin-top: 2px;
+	outline: 0 none;
+	padding: 6px 12px;
+	width: 68%;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	font: normal 14px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.bootstrap-frm select {
+	background: #FFF url('down-arrow.png') no-repeat right;
+	background: #FFF url('down-arrow.png') no-repeat right);
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	width: 72%;
+	height: 30px;
+}
+
+.bootstrap-frm textarea {
+	height: 100px;
+}
+
+.bootstrap-frm .button {
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 10px 25px 10px 25px;
+	color: #333;
+	border-radius: 4px;
+}
+
+.bootstrap-frm .button:hover {
+	color: #333;
+	background-color: #EBEBEB;
+	border-color: #ADADAD;
+}
+
+.squaredOne {
+	width: 18px;
+	height: 18px;
+	background: #fcfff4;
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4',
+		endColorstr='#b3bead', GradientType=0);
+	margin: 20px auto;
+	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px
+		rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+	position: relative;
+}
+
+.squaredOne label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 4px;
+	top: 4px;
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px
+		rgba(255, 255, 255, 1);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px
+		rgba(255, 255, 255, 1);
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px
+		rgba(255, 255, 255, 1);
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222',
+		endColorstr='#45484d', GradientType=0);
+}
+
+.squaredOne label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity = 0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: #00bf00;
+	background: -webkit-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: -moz-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: -o-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: -ms-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: linear-gradient(top, #00bf00 0%, #009400 100%);
+	top: 2px;
+	left: 2px;
+	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px
+		rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.squaredOne label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity = 30);
+	opacity: 0.3;
+}
+
+.squaredOne input[type=checkbox]:checked+label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity = 100);
+	opacity: 1;
+}
+
+div.img {
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #0000ff;
+	width: 100%;
+	height: 20%;
+	float: left;
+	text-align: center;
+}
+
+div.img img {
+	display: inline;
+	margin: 5px;
+	border: 1px solid #ffffff;
+}
+
+div.img a:hover img {
+	border: 1px solid #0000ff;
+}
+
+div.desc {
+	text-align: center;
+	font-weight: normal;
+	width: 120px;
+	margin: 5px;
+}
+
+#Rolled {
+	height: auto;
+	width: 80%;
+	display: table;
+}
+
+input[type=text] {
+	padding: 5px;
+	border: 2px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+input[type=text]:focus {
+	border-color: #333;
+}
+
+input[type=submit] {
+	padding: 5px 15px;
+	background: #ccc;
+	border: 0 none;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/***FIRST STYLE THE BUTTON***/
+input#mergeToUpdate {
+	cursor: pointer;
+	/*forces the cursor to change to a hand when the button is hovered*/
+	padding: 5px 25px; /*add some padding to the inside of the button*/
+	background: #35b128; /*the colour of the button*/
+	border: 1px solid #33842a;
+	/*required or the default border for the browser will appear*/
+	/*give the button curved corners, alter the size as required*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	/*give the button a drop shadow*/
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+	box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+	/*style the text*/
+	color: #f3f3f3;
+	font-size: 1.1em;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+input#mergeToUpdate:hover,input#mergeToUpdate:focus {
+	background-color: #399630; /*make the background a little darker*/
+	/*reduce the drop shadow size to give a pushed button effect*/
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+	box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+}
+
+.myButtonRED {
+	-moz-box-shadow: inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow: inset 0px 39px 0px -24px #e67a73;
+	box-shadow: inset 0px 39px 0px -24px #e67a73;
+	background-color: #e4685d;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #ffffff;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: arial;
+	font-size: 15px;
+	padding: 6px 15px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #b23e35;
+}
+
+.myButtonRED:hover {
+	background-color: #eb675e;
+}
+
+.myButtonRED:active {
+	position: relative;
+	top: 1px;
+}
+</style>
+
+
+
+</html>
